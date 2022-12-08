@@ -1,0 +1,131 @@
+
+/* Applying styling to the backgrouond image to ensure it stays centered */
+body {
+  background-image: url("wowburger1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-color: #924646;
+  text-align: center;
+}
+
+/* Styling to H1 element to match the general style of the Wowburger design */
+h1{
+  border-style: solid;
+  border-color: rgb(205, 29, 29);
+  width:30%;
+  position: relative;
+  left:35%;
+  background-color: yellow;
+  color: rgb(205, 29, 29);
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 550;
+  margin-top: 90px;
+}
+
+/* Adding thin black border to the buyrger columns whith the burger images that create the menu page */
+.col-sm-4 {
+  padding: 0%;
+  margin: 0px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+ /* adding media query to ensure menu is readable on small screens, put each burger under each other */
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+  }
+} 
+
+/* adding hover and enlarge/scale to the burger images when mouse hovers over them */
+img.custom:hover,
+img.custom:focus 
+{
+    transition: .2s;
+    transform: scale(1.15);
+}
+
+/*
+.column {
+  border-image: fill;
+  float: center;
+  width: 33%;
+  padding: 0%;
+  margin: 10px;
+  border-style: solid;
+  border-color: black;
+  
+}
+ */
+
+/* styling of the form on the order page, keeping it relative position, with a border */
+.orderPage{   
+  writing-mode: horizontal-tb !important; 
+  position: relative;
+  top: 80px;
+  border: 5px;
+  border-color: rgb(205, 29, 29);
+  border-style: solid;
+  background-color: blanchedalmond;
+  box-sizing: border-box, auto;
+  appearance: auto;
+  display: inline-box;
+  text-align: start;
+  padding: 20px;
+  width: 40%;
+  margin: 0 auto; 
+}
+
+/* styling navigation links to top right, as per CA screenshot */ 
+.linkAccess{
+  color: white;
+  position: absolute; top: 20px; right: 20px;
+ 
+}
+
+/* position and style link to the bottom of the page as per CA screenshot */ 
+.footer {
+  position: fixed;
+  bottom: 25px;
+  width: 250px;
+  height: 100px;
+  left: 50%;
+  margin-left: calc(-250px / 2);
+  text-emphasis-color: white;
+}
+
+/* formatting link texts as seen on Wowburger page, no special effect for visited links */
+a:link, :visited {
+  background: none;
+  color: white;
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 550;
+  font-size: 18px;
+  line-height:24px ;
+  text-align: center;
+  text-decoration: none; 
+  display:contents; 
+}
+
+/* creating different text style & effect when mouse hovers over link */ 
+a:hover {
+  text-decoration: underline;
+  color: yellow !important;
+  font-size:x-large;
+}
+/*
+#msg{
+  position: fixed;
+  height: 90px;
+  width: 300px;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align: center;
+  background-color: blueviolet;
+  display: none;
+}*/

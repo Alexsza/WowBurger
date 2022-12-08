@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order page</title>
+    <!-- JQuery link to enable the use of JQuery function for burger size -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- linking the javascript file in the folder to this HTML-->
+    <script src="script.js"></script>
+    <!-- linking the CSS file to this HTML to enable styles defined with CSS -->
+    <link rel="stylesheet" href="style.css">
+        
+</head>
+
+<body>
+
+    <!-- h1 tag for search engine optimization-->
+    <h1>COMPLETE YOUR ORDER!</h1>
+    <!-- creating the order form as a table within the div class Order Page 
+        Separate rows within the table for the attributes (except burger selection, size selection & qty selection)
+        On submit page should direct to order confirmation page (not created)
+    -->
+    <div class="orderPage">
+        <form name="OrderForm" method="post" onsubmit="validate()">
+            <table>
+                <tr>
+                    <td>
+                        <label >Username*</label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <!-- validating input for username as minimum 4 characters (have decided on 4 is needed for a username), not setting a max,
+                    UserName set as a required field, if no input entered, user will be prompted upon form submission-->
+                        <input id="UserName" type="text" placeholder="Enter your username" minlength="4"  required >
+                    </td> 
+                </tr>
+                <tr>
+                    <td>
+                        <label >Password</label> 
+                    </td>
+                <tr>
+                    <td>
+                        <!-- Password is masked, set as a required field that is 9 characters long, if user enters less, will be prompted upon form submission-->
+                        <input name="PASSWORD" type="password" placeholder="Enter your password" minlength="9" maxlength="9" required >  
+                        <!-- Try to get the eye icon for the password / not working at the moment
+                        <img id="eyeSVG" onclick="eyeClick()" width="25px" src=script.js" alt>  -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Choose the Burger: </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- burger selection via radio buttons-->
+                        <label>Wow Cheeseburger  </label> 
+                        <input type="radio" > 
+                        <label>Wow Hamburger  </label> 
+                        <input type="radio" >
+                        <label>Wow Bacon Cheeseburger  </label> 
+                        <input type="radio" > 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Choose the size: </label>
+                        <!-- burger size selection via option values, defaults at Large, so did not set as required field, as selection is always made -->
+                        <select class="size">
+                                    <option value="Large">6oz Large - Price: 7euro </option>
+                                    <option value="Extra-Large">10oz Extra-Large - Price: 9euro</option>
+                                    <option value="Supersize">16oz Supersize - Price:17.50euro</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <!-- Quantity selection field restricted to numerical values, at minimum value of 1 (0 is not allowed)
+                        User will be prompted if no entry was made or if entry was 0 upon form submission -->
+                        <label > Enter the Quantity  </label> 
+                        <input type="number" min="1" required>
+                    </td>
+                </tr>
+                        <!-- Discount field with optional entry -->
+                <tr>    
+                        <td>
+                        <input id="btndiscnt" type="text" placeholder="Discount code" name="btndiscnt" >
+                    </td>
+                </tr>
+                <!-- length of input for 'btndiscount' is checked in showMsg() to validate entry & result with discouont message -->
+                <tr>
+                    <td>  
+                        <button id=apply onclick="showMsg()">Apply </button>
+                        <p id="Applied"></p> 
+                    </td>
+                </tr>          
+                <!-- Form is validated with the 'Submit Order' button, if any entry not as per requirement from above, ereror message will display -->
+                <tr>
+                    <td>
+                        <button  >Submit Order</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-- link to return to main page in top right corner -->
+    <div class="linkAccess">
+        <a class="btn" href="index.html">MAIN MENU</a>
+    
+    </div>
+    
+</body>
+</html>
